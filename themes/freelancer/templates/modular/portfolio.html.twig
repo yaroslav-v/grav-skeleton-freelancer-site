@@ -1,0 +1,65 @@
+<section id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>{{ page.header.title }}</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            {% for portfolio in page.header.portfolios %}
+                <div class="col-md-4 portfolio-item">
+                    <a href="#portfolioModal-{{ portfolio.modal_id }}" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        {{ page.media[portfolio.img].html('portfolio.alt', 'img-responsive') }}
+                    </a>
+                </div>
+    
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% for portfolio in page.header.portfolios %}
+    <div class="portfolio-modal modal fade" id="portfolioModal-{{ portfolio.modal_id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>{{ portfolio.title }}</h2>
+                            <hr class="star-primary">
+                            <img src="{{ page.media[portfolio.img].url }}" class="img-responsive img-centered" alt="{{ portfolio.alt }}">
+                            <p>{{ portfolio.description }}</p>
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">{{ portfolio.client }}</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">{{ portfolio.project_date }}</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">{{ portfolio.category }}</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

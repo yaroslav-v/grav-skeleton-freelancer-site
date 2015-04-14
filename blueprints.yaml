@@ -1,0 +1,13 @@
+name: Freelancer Site
+version: 1.0.0
+description: "The **Freelancer Skeleton** provides a great example of how to build a modern one-page design with navigation that scrolls to the relevant section of the page."
+icon: group
+author:
+  name: Yaroslav Veykov
+  email: genie@gibstudio.com
+  url: http://gibstudio.com
+homepage: https://github.com/yaroslav-v/grav-skeleton-freelancer-site
+demo: http://demo.gibstudio.com/grav-freelancer
+keywords: freelancer, skeleton, scroll, single, page, modular
+bugs: https://github.com/yaroslav-v/grav-skeleton-freelancer-site/issues
+license: MIT

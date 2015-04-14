@@ -1,0 +1,17 @@
+name: Freelancer
+version: 1.0.0
+description: "Freelancer is a one page Bootstrap portfolio theme for freelancers. It's a port of **Freelancer** template by Start Bootstrap."
+icon: group
+author:
+  name: Yaroslav Veykov
+  email: genie@gibstudio.com
+  url: http://gibstudio.com
+homepage: https://github.com/yaroslav-v/grav-theme-freelancer
+demo: http://demo.gibstudio.com/grav-freelancer
+keywords: freelancer, theme, core, modern, fast, responsive, html5, css3
+bugs: https://github.com/yaroslav-v/grav-theme-freelancer/issues
+license: MIT
+
+form:
+  validation: strict
+  fields:

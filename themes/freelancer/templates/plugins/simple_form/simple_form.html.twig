@@ -1,0 +1,120 @@
+{% if fields | length > 1 %}
+
+<form name="simple_form" id="simple_form" novalidate>
+
+    {% set fields = fields|sort_by_key('position') %}
+    {% for key, field in fields %}
+        {% if field.type in ['text', 'email', 'tel', 'hidden', 'url', 'date'] %}
+        <div class="row control-group">
+            <div id="simple_form-{{ key }}">
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>{{ field.title }}</label>
+                    <input type="{{ field.type }}" id="simple_form-field-{{ key }}" name="{{ key }}" class="{{ field.class }} form-control" placeholder="{{ field.placeholder }}" value="{{ field.default }}" {% if field.required %}required="required"{% endif %} data-validation-required-message="{{ field.required_message }}" />
+                    <p class="help-block text-danger"></p>
+                </div>
+            </div>
+        </div>
+        {% elseif field.type in ['number', 'range'] %}
+        <div class="row control-group">
+            <div id="simple_form-{{ key }}">
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>{{ field.title }}</label>
+                    <input type="{{ field.type }}" id="simple_form-field-{{ key }}" name="{{ key }}" class="{{ field.class }} form-control" placeholder="{{ field.placeholder }}" value="{{ field.default }}" {% if field.required %}required="required"{% endif %} {% if field.min | length >= 0 %}min="{{ field.min }}"{% endif %} {% if field.max | length >= 0 %}max="{{ field.max }}"{% endif %} data-validation-required-message="{{ field.required_message }}" />
+                    <p class="help-block text-danger"></p>
+                </div>
+            </div>
+        </div>
+        {% elseif field.type == 'textarea' %}
+        <div class="row control-group">
+            <div id="simple_form-{{ key }}">
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>{{ field.title }}</label>
+                    <textarea rows="5" id="simple_form-field-{{ key }}" name="{{ key }}" class="{{ field.class }} form-control" placeholder="{{ field.placeholder }}" {% if field.required %}required="required"{% endif %} data-validation-required-message="{{ field.required_message }}">{{ field.default }}</textarea>
+                    <p class="help-block text-danger"></p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    
+    <br/>
+    <div class="clearfix"></div>
+    
+    {% for key, field in fields %}
+        {% if field.type == 'submit' %}
+        <div class="row">
+            <div id="simple_form-success"></div>
+            <div id="simple_form-{{ key }}">
+                <div class="form-group col-xs-12">
+                    <button id="simple_form-field-{{ key }}" name="{{ key }}" class="{{ field.class }} btn btn-success btn-lg">{{ field.title }}</button>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+</form>
+
+<script>
+$(function() {
+    $("input,textarea").jqBootstrapValidation({
+        preventSubmit: true,
+        submitError: function($form, event, errors) {
+            // additional error messages or events
+        },
+        
+        submitSuccess: function($form, event) {
+            event.preventDefault(); // prevent default submit behaviour
+            
+            $.ajax({
+                dataType: 'jsonp',
+                url: "http://getsimpleform.com/messages/ajax?form_api_token={{ token }}",
+                data: {
+                    {% for key, field in fields %}
+                    {% if field.type != 'submit' %}
+                        {{ key }}: $("#simple_form-field-{{ key }}").val(),
+                    {% endif %}
+                    {% endfor %}
+                },
+                cache: false,
+                success: function() {
+                    // Success message
+                    $('#simple_form-success').html("<div class='alert alert-success'>");
+                    $('#simple_form-success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;").append("</button>");
+                    $('#simple_form-success > .alert-success').append("<strong>{{ messages.success }}</strong>");
+                    $('#simple_form-success > .alert-success').append('</div>');
+                    
+                    //clear all fields
+                    $('#simple_form').trigger("reset");
+                },
+                error: function() {
+                    // Fail message
+                    $('#simple_form-success').html("<div class='alert alert-danger'>");
+                    $('#simple_form-success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                    .append("</button>");
+                    $('#simple_form-success > .alert-danger').append("<strong>{{ messages.error }}</strong>");
+                    $('#simple_form-success > .alert-danger').append('</div>');
+                    
+                    //clear all fields
+                    $('#simple_form').trigger("reset");
+                }
+            });
+        },
+        
+        filter: function() {
+            return $(this).is(":visible");
+        },
+    });
+    
+    $("a[data-toggle=\"tab\"]").click(function(e) {
+        e.preventDefault();
+        $(this).tab("show");
+    });
+});
+
+/*When clicking on Full hide fail/success boxes */
+$('#simple_form-field-name').focus(function() {
+    $('#success').html('');
+});
+</script>
+
+{% endif %}
