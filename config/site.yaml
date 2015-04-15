@@ -3,7 +3,7 @@ author:
   name: Joe Bloggs
   email: 'joe@test.com'
 metadata:
-    description: 'Freelancer is a one page Bootstrap portfolio theme for freelancers. It is a port of **Freelancer** template by Start Bootstrap.'
+  description: 'Freelancer is a one page Bootstrap portfolio theme for freelancers. It is a port of **Freelancer** template by Start Bootstrap.'
 
 # Footer settings
 footer:

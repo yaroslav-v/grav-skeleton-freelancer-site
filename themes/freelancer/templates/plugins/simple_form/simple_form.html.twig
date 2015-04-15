@@ -91,7 +91,7 @@ $(function() {
                     $('#simple_form-success').html("<div class='alert alert-danger'>");
                     $('#simple_form-success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                     .append("</button>");
-                    $('#simple_form-success > .alert-danger').append("<strong>{{ messages.error }}</strong>");
+                    $('#simple_form-success > .alert-danger').append("<strong>{{ messages.error }} <a href="mailto:{{ author.email|safe_email }}">{{ author.email|safe_email }}</a></strong>");
                     $('#simple_form-success > .alert-danger').append('</div>');
                     
                     //clear all fields

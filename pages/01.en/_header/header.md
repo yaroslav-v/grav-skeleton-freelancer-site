@@ -1,6 +1,6 @@
 ---
 title: Header
-menu: Top
+menu: top
 author:
     name: Start Bootstrap
     title: Web Developer - Graphic Artist - User Experience Designer

@@ -8,6 +8,10 @@ This Grav skeleton is based around the [Freelancer Grav theme](https://github.co
 
 Demo of this skeleton can be found here: http://demo.gibstudio.com/grav-freelancer
 
+Additionally added basic localization for content, try:
+* http://demo.gibstudio.com/grav-freelancer/en (the same as  http://demo.gibstudio.com/grav-freelancer)
+* http://demo.gibstudio.com/grav-freelancer/ru
+
 # Features
 
 * Flat icons by flaticons.com
@@ -43,3 +47,4 @@ To install  **just** the theme:
 2. Install [Simple Form plugin](https://github.com/nunopress/grav-plugin-simple_form)
 3. Install [Freelancer theme](https://github.com/yaroslav-v/grav-theme-freelancer)
 4. Add additional parameter 'position' for fields in /user/plugins/simple_form/simple_form.yaml to sort fields in necessary order.
+5. Update simple_form.php from skeleton installation.

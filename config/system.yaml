@@ -1,7 +1,7 @@
 absolute_urls: false
 
 home:
-  alias: '/home'
+  alias: '/en'
 
 pages:
   theme: freelancer

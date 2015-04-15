@@ -1,6 +1,6 @@
 ---
-title: Freelancer
-menu: Home
+title: Фрилансер
+menu: home
 onpage_menu: true
 content:
     items: @self.modular

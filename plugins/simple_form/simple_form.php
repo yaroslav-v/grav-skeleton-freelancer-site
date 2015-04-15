@@ -68,6 +68,7 @@ class Simple_FormPlugin extends Plugin
         }
 
         $template_vars = [
+            'author'    => new Data((array) $this->grav['config']->get('site.author')), // to show site email in error message
             'fields'    => $this->config->get('fields'),
             'token'     => $this->config->get('token'),
             'messages'  => $this->config->get('messages')

@@ -1,10 +1,11 @@
 ---
-title: 'contact'
+title: Contact
+menu: contact
 simple_form:
     token: "your token goes here"
     messages:
         success: "Your message has been sent."
-        error: "Sorry, it seems that my mail server is not responding. Please try again later!"
+        error: "Sorry, it seems that mail server is not responding. Please try again later or send me message to email "
     fields:
         name:
             position: 1
