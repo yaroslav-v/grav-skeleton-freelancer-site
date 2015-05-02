@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                {{ page.media['profile.png'].html('', 'img-responsive img-circle') }}
+                {{ page.media['profile.png'].html(page.header.author.name, page.header.author.title, 'img-responsive img-circle') }}
                 <div class="intro-text">
                     <span class="name">{{ page.header.author.name }}</span>                    <hr class="star-light">                    <span class="skills">{{ page.header.author.title }}</span>
                 </div>

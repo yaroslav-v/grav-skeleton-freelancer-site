@@ -15,7 +15,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        {{ page.media[portfolio.img].html('portfolio.alt', 'img-responsive') }}
+                        {{ page.media[portfolio.img].html(portfolio.title, portfolio.alt, 'img-responsive') }}
                     </a>
                 </div>
     
@@ -39,7 +39,7 @@
                         <div class="modal-body">
                             <h2>{{ portfolio.title }}</h2>
                             <hr class="star-primary">
-                            <img src="{{ page.media[portfolio.img].url }}" class="img-responsive img-centered" alt="{{ portfolio.alt }}">
+                            {{ page.media[portfolio.img].html(portfolio.title, portfolio.alt, 'img-responsive img-centered') }}
                             <p>{{ portfolio.description }}</p>
                             <ul class="list-inline item-details">
                                 <li>Client:
