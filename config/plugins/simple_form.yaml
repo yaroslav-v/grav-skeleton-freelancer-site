@@ -22,6 +22,7 @@ fields:
       - "Category 1"
       - "Category 2"
     required: true
+    position: 10
 
   email:
     type: "email"

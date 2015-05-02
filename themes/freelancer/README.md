@@ -25,7 +25,7 @@ Fully loaded Grav skeleton with all necessary plugins and content commited here:
 
 # Installation
 
-Installing the Twenty theme can be done in one of two ways. Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the theme with a simple terminal command, while the manual method enables you to do so via a zip file.
+Installing the Freelancer theme can be done in one of two ways. Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the theme with a simple terminal command, while the manual method enables you to do so via a zip file.
 
 ## GPM Installation (Preferred)
 
@@ -51,11 +51,11 @@ If you want to set Freelancer as the default theme, you can do so by following t
 * Save your changes.
 * Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in Terminal and typing `bin/grav clear-cache`.
 
-Once this is done, you should be able to see the new theme on the frontend. Keep in mind any customizations made to the previous theme will not be reflected as all of the theme and templating information is now being pulled from the **twenty** folder.
+Once this is done, you should be able to see the new theme on the frontend. Keep in mind any customizations made to the previous theme will not be reflected as all of the theme and templating information is now being pulled from the **freelancer** folder.
 
 # Updating
 
-As development for the Twenty theme continues, new versions may become available that add additional features and functionality, improve compatibility with newer Grav releases, and generally provide a better user experience. Updating Twenty is easy, and can be done through Grav's GPM system, as well as manually.
+As development for the Freelancer theme continues, new versions may become available that add additional features and functionality, improve compatibility with newer Grav releases, and generally provide a better user experience. Updating Freelancer is easy, and can be done through Grav's GPM system, as well as manually.
 
 ## GPM Update (Preferred)
 
@@ -63,11 +63,11 @@ Unsupported now.
 
 ## Manual Update
 
-Manually updating Twenty is pretty simple. Here is what you will need to do to get this done:
+Manually updating Freelancer is pretty simple. Here is what you will need to do to get this done:
 
-* Delete the `your/site/user/themes/twenty` directory.
-* Download the new version of the Twenty theme from either [GitHub](https://github.com/getgrav/grav-theme-twenty) or [GetGrav.org](http://getgrav.org/downloads/themes).
-* Unzip the zip file in `your/site/user/themes` and rename the resulting folder to `twenty`.
+* Delete the `your/site/user/themes/freelancer` directory.
+* Download the new version of the Freelancer theme from either [GitHub](https://github.com/yaroslav-v/grav-theme-freelancer).
+* Unzip the zip file in `your/site/user/themes` and rename the resulting folder to `freelancer`.
 * Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in terminal and typing `bin/grav clear-cache`.
 
 > Note: Any changes you have made to any of the files listed under this directory will also be removed and replaced by the new set. Any files located elsewhere (for example a YAML settings file placed in `user/config/themes`) will remain intact.

@@ -43,8 +43,8 @@ It is possible to install just the theme, but page content will need to referenc
 
 To install  **just** the theme:
 
-1. Install Grav
-2. Install [Simple Form plugin](https://github.com/nunopress/grav-plugin-simple_form)
-3. Install [Freelancer theme](https://github.com/yaroslav-v/grav-theme-freelancer)
-4. Add additional parameter 'position' for fields in /user/plugins/simple_form/simple_form.yaml to sort fields in necessary order.
+1. Install Grav.
+2. Install [Simple Form plugin](https://github.com/nunopress/grav-plugin-simple_form).
+3. Install [Freelancer theme](https://github.com/yaroslav-v/grav-theme-freelancer).
+4. Add additional parameter 'position' for fields in simple_form.yaml to sort fields in necessary order or update skeleton installation.
 5. Update simple_form.php from skeleton installation.
